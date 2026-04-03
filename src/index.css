@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+}
+
+:root {
+  --accent: #9f1239; /* rose-800 */
+  --accent-soft: #fff1f2; /* rose-50 */
+}
+
+.dark {
+  --accent: #fbbf24; /* amber-400 */
+  --accent-soft: #451a03; /* amber-950/30 equivalent */
+}

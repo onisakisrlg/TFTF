@@ -50,8 +50,8 @@ const translations = {
     ],
     contact: 'お問い合わせ',
     contactDesc: 'サービスに関するお問い合わせはこちらから。',
-    email: 'メールアドレス (準備中)',
-    phone: '電話番号 (準備中)',
+    email: 'info@tfgoods.jp',
+    phone: '06-7165-6278',
     footer: '© 2026 TF合同会社. All rights reserved.'
   },
   en: {
@@ -77,8 +77,8 @@ const translations = {
     ],
     contact: 'Contact Us',
     contactDesc: 'Please feel free to reach out for any inquiries regarding our services.',
-    email: 'Email (Coming Soon)',
-    phone: 'Phone (Coming Soon)',
+    email: 'info@tfgoods.jp',
+    phone: '06-7165-6278',
     footer: '© 2026 TF LLC. All rights reserved.'
   }
 };
@@ -100,56 +100,56 @@ export default function App() {
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-black/10 dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">TF</div>
-            <span className="font-bold text-xl tracking-tight">{t.companyName}</span>
+            <div className="w-8 h-8 bg-accent rounded flex items-center justify-center text-white dark:text-black font-bold">TF</div>
+            <span className="font-bold text-xl tracking-tight uppercase">{t.companyName}</span>
           </div>
           <div className="flex items-center gap-4">
             <button 
               onClick={toggleLang}
-              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-2 text-sm font-medium"
+              className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center gap-2 text-sm font-medium"
               aria-label="Toggle Language"
             >
-              <Globe className="w-5 h-5" />
+              <Globe className="w-5 h-5 text-accent" />
               <span className="uppercase">{lang === 'ja' ? 'EN' : 'JP'}</span>
             </button>
             <button 
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
               aria-label="Toggle Theme"
             >
-              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5 text-accent" />}
             </button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-indigo-50/50 to-white dark:from-indigo-950/20 dark:to-slate-950">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase bg-indigo-50 dark:bg-indigo-900/30 rounded-full">
-              Established 2026
+            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-accent uppercase bg-accent-soft rounded-none border border-accent/20">
+              EST. 2026
             </span>
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-indigo-600 dark:from-white dark:to-indigo-400">
+            <h1 className="text-4xl sm:text-7xl font-black tracking-tighter mb-6 uppercase">
               {t.heroTitle}
             </h1>
-            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-10">
+            <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-3xl mx-auto mb-10 font-medium">
               {t.heroDesc}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="#services" className="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 dark:shadow-none">
+              <a href="#services" className="px-10 py-4 bg-accent text-white dark:text-black font-bold rounded-none hover:opacity-90 transition-all shadow-lg shadow-accent/10">
                 {t.services}
               </a>
-              <a href="#contact" className="px-8 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+              <a href="#contact" className="px-10 py-4 bg-transparent text-black dark:text-white font-bold rounded-none border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                 {t.contact}
               </a>
             </div>
@@ -158,26 +158,26 @@ export default function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 px-4 sm:px-6 lg:px-8">
+      <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 border-y border-black/5 dark:border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t.services}</h2>
-            <div className="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            <h2 className="text-4xl font-black uppercase tracking-tighter mb-4">{t.services}</h2>
+            <div className="w-24 h-2 bg-accent mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-black dark:border-white">
             {t.serviceList.map((service, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -5 }}
-                className="p-8 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all"
+                className="p-10 bg-white dark:bg-black border border-black/5 dark:border-white/5 hover:border-accent/50 transition-all group relative overflow-hidden"
               >
-                <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6">
+                <div className="w-12 h-12 bg-accent-soft rounded-none flex items-center justify-center text-accent mb-8 group-hover:bg-accent group-hover:text-white dark:group-hover:text-black transition-colors">
                   <service.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{service.title}</h3>
+                <p className="text-black/60 dark:text-white/60 leading-relaxed font-medium">
                   {service.desc}
                 </p>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform"></div>
               </motion.div>
             ))}
           </div>
@@ -185,37 +185,34 @@ export default function App() {
       </section>
 
       {/* Company Info Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black text-white dark:bg-white dark:text-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-8">{t.companyInfo}</h2>
-              <div className="space-y-6">
+              <h2 className="text-4xl font-black uppercase tracking-tighter mb-12">{t.companyInfo}</h2>
+              <div className="space-y-8">
                 {t.infoItems.map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="mt-1 p-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700">
-                      <item.icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <div key={index} className="flex items-start gap-6 border-b border-white/10 dark:border-black/10 pb-6">
+                    <div className="mt-1 p-2 bg-accent/20 rounded-none">
+                      <item.icon className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-slate-500 dark:text-slate-500 uppercase tracking-wider">{item.label}</p>
-                      <p className="text-lg font-semibold">{item.value}</p>
+                      <p className="text-xs font-black text-white/40 dark:text-black/40 uppercase tracking-[0.2em] mb-1">{item.label}</p>
+                      <p className="text-xl font-bold tracking-tight">{item.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-indigo-600/5 dark:bg-indigo-400/5 rounded-3xl flex items-center justify-center p-12 border border-indigo-100 dark:border-indigo-900/30">
+              <div className="aspect-square bg-white/5 dark:bg-black/5 border-4 border-white dark:border-black flex items-center justify-center p-12">
                 <div className="text-center">
-                  <div className="text-8xl font-black text-indigo-600/10 dark:text-indigo-400/10 mb-4 select-none">TF</div>
-                  <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 italic">
-                    "{t.tagline}"
+                  <div className="text-[12rem] font-black text-accent/5 leading-none select-none absolute inset-0 flex items-center justify-center">TF</div>
+                  <p className="text-3xl font-black uppercase tracking-tighter relative z-10 leading-tight">
+                    {t.tagline}
                   </p>
                 </div>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-indigo-600/10 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-indigo-400/10 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>
@@ -224,35 +221,47 @@ export default function App() {
       {/* Contact Section */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">{t.contact}</h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
+          <h2 className="text-4xl font-black uppercase tracking-tighter mb-6">{t.contact}</h2>
+          <p className="text-xl text-black/60 dark:text-white/60 mb-16 font-medium">
             {t.contactDesc}
           </p>
-          <div className="grid sm:grid-cols-2 gap-6">
-            <div className="p-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4 group hover:border-indigo-500 transition-colors cursor-not-allowed">
-              <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30 transition-colors">
-                <Mail className="w-6 h-6 text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 transition-colors" />
+          <div className="grid sm:grid-cols-2 gap-0 border-2 border-black dark:border-white">
+            <a 
+              href={`mailto:${t.email}`}
+              className="p-12 bg-white dark:bg-black flex flex-col items-center gap-6 group hover:bg-accent-soft transition-all border-r border-black dark:border-white"
+            >
+              <div className="w-16 h-16 bg-accent-soft rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white dark:group-hover:text-black transition-colors">
+                <Mail className="w-8 h-8 text-accent group-hover:text-white dark:group-hover:text-black" />
               </div>
-              <span className="font-medium text-slate-500">{t.email}</span>
-            </div>
-            <div className="p-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-4 group hover:border-indigo-500 transition-colors cursor-not-allowed">
-              <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30 transition-colors">
-                <Phone className="w-6 h-6 text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 transition-colors" />
+              <div className="space-y-1">
+                <p className="text-xs font-black uppercase tracking-widest text-black/40 dark:text-white/40">EMAIL</p>
+                <p className="text-xl font-bold group-hover:text-accent transition-colors">{t.email}</p>
               </div>
-              <span className="font-medium text-slate-500">{t.phone}</span>
-            </div>
+            </a>
+            <a 
+              href={`tel:${t.phone.replace(/-/g, '')}`}
+              className="p-12 bg-white dark:bg-black flex flex-col items-center gap-6 group hover:bg-accent-soft transition-all"
+            >
+              <div className="w-16 h-16 bg-accent-soft rounded-full flex items-center justify-center group-hover:bg-accent group-hover:text-white dark:group-hover:text-black transition-colors">
+                <Phone className="w-8 h-8 text-accent group-hover:text-white dark:group-hover:text-black" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs font-black uppercase tracking-widest text-black/40 dark:text-white/40">PHONE</p>
+                <p className="text-xl font-bold group-hover:text-accent transition-colors">{t.phone}</p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center text-white text-xs font-bold">TF</div>
-            <span className="font-bold">{t.companyName}</span>
+      <footer className="py-16 px-4 border-t-4 border-black dark:border-white">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-accent rounded-none flex items-center justify-center text-white dark:text-black font-black text-xl">TF</div>
+            <span className="font-black text-2xl tracking-tighter uppercase">{t.companyName}</span>
           </div>
-          <p className="text-sm text-slate-500 dark:text-slate-500">
+          <p className="text-sm font-bold uppercase tracking-widest text-black/40 dark:text-white/40">
             {t.footer}
           </p>
         </div>
