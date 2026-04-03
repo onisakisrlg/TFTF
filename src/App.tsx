@@ -46,7 +46,7 @@ const translations = {
       { label: '本店所在地', value: '大阪府大阪市浪速区桜川二丁目1番9-507号', icon: MapPin },
       { label: '設立年月日', value: '令和8年3月17日', icon: Calendar },
       { label: '代表者', value: '藤本 結月', icon: User },
-      { label: '資本金', value: '10万円', icon: Package },
+      { label: '資本金', value: '1,000,000円', icon: Package },
     ],
     contact: 'お問い合わせ',
     contactDesc: 'サービスに関するお問い合わせはこちらから。',
@@ -73,7 +73,7 @@ const translations = {
       { label: 'Headquarters', value: 'Sakuragawa 2-1-9-507, Naniwa-ku, Osaka-shi, Osaka', icon: MapPin },
       { label: 'Established', value: 'March 17, 2026', icon: Calendar },
       { label: 'Representative', value: 'Yuzuki Fujimoto', icon: User },
-      { label: 'Capital', value: '100,000 JPY', icon: Package },
+      { label: 'Capital', value: '1,000,000 JPY', icon: Package },
     ],
     contact: 'Contact Us',
     contactDesc: 'Please feel free to reach out for any inquiries regarding our services.',
@@ -204,15 +204,18 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-white/5 dark:bg-black/5 border-4 border-white dark:border-black flex items-center justify-center p-12">
-                <div className="text-center">
-                  <div className="text-[12rem] font-black text-accent/5 leading-none select-none absolute inset-0 flex items-center justify-center">TF</div>
-                  <p className="text-3xl font-black uppercase tracking-tighter relative z-10 leading-tight">
-                    {t.tagline}
-                  </p>
-                </div>
-              </div>
+            <div className="relative h-full min-h-[400px]">
+              <iframe
+                title="Google Maps"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                src="https://www.google.com/maps?q=大阪府大阪市浪速区桜川二丁目1番9-507号&output=embed"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale dark:invert contrast-125"
+              ></iframe>
             </div>
           </div>
         </div>
