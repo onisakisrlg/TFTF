@@ -84,7 +84,10 @@ const translations = {
 };
 
 export default function App() {
-  const [lang, setLang] = useState<Language>('ja');
+  const [lang, setLang] = useState<Language>(() => {
+    const browserLang = navigator.language.toLowerCase();
+    return browserLang.startsWith('ja') ? 'ja' : 'en';
+  });
   const [theme, setTheme] = useState<Theme>('light');
   const t = translations[lang];
 
@@ -95,6 +98,10 @@ export default function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [theme]);
+
+  useEffect(() => {
+    document.title = t.companyName;
+  }, [t.companyName]);
 
   const toggleLang = () => setLang(lang === 'ja' ? 'en' : 'ja');
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
