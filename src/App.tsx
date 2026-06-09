@@ -33,6 +33,7 @@ const translations = {
     heroTitle: '貿易から日用品まで、幅広いニーズに応えるパートナー',
     heroDesc: 'TF合同会社は、輸出入代行、インターネット販売、文房具・日用品の提供を通じて、お客様のビジネスと生活をサポートします。',
     services: '事業内容',
+    shopBtn: '商品一覧・購入',
     serviceList: [
       { title: '貿易・輸出入代行', desc: '輸出入代行業務およびそれらの仲介、コンサルティング。', icon: Globe },
       { title: 'インターネット販売', desc: 'インターネットを利用した各種物品の販売。', icon: ShoppingCart },
@@ -60,6 +61,7 @@ const translations = {
     heroTitle: 'Your Partner for Diverse Needs, from Trade to Daily Goods',
     heroDesc: 'TF LLC supports your business and lifestyle through import/export agency, e-commerce, and the provision of stationery and daily necessities.',
     services: 'Our Services',
+    shopBtn: 'Online Store',
     serviceList: [
       { title: 'Trade & Import/Export', desc: 'Import/export agency business, mediation, and consulting.', icon: Globe },
       { title: 'E-commerce', desc: 'Sales of various goods using the internet.', icon: ShoppingCart },
@@ -116,6 +118,15 @@ export default function App() {
             <span className="font-bold text-xl tracking-tight uppercase">{t.companyName}</span>
           </div>
           <div className="flex items-center gap-4">
+            <a 
+              href="https://shop.tfgoods.jp" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-accent text-white dark:text-black font-bold text-sm hover:opacity-90 transition-all rounded-none"
+            >
+              <ShoppingCart className="w-4 h-4" />
+              <span>{t.shopBtn}</span>
+            </a>
             <button 
               onClick={toggleLang}
               className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center gap-2 text-sm font-medium"
@@ -153,7 +164,11 @@ export default function App() {
               {t.heroDesc}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="#services" className="px-10 py-4 bg-accent text-white dark:text-black font-bold rounded-none hover:opacity-90 transition-all shadow-lg shadow-accent/10">
+              <a href="https://shop.tfgoods.jp" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-accent text-white dark:text-black font-bold rounded-none hover:opacity-90 transition-all shadow-lg shadow-accent/10 flex items-center gap-2">
+                <ShoppingCart className="w-5 h-5" />
+                {t.shopBtn}
+              </a>
+              <a href="#services" className="px-10 py-4 bg-transparent text-black dark:text-white font-bold rounded-none border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                 {t.services}
               </a>
               <a href="#contact" className="px-10 py-4 bg-transparent text-black dark:text-white font-bold rounded-none border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
